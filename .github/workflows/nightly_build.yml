@@ -198,7 +198,7 @@ jobs:
             latest=false
 
       - name: Download SHA256 tag  build-base:${{ matrix.os }}
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: build-base_${{ matrix.os }}
 
@@ -317,7 +317,7 @@ jobs:
             latest=false
 
       - name: Download SHA256 tag for ${{ steps.build_base_image.outputs.build_base }}:${{ matrix.os }}
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         if: ${{ matrix.build != 'snmptraps' }}
         with:
           name: ${{ steps.build_base_image.outputs.build_base }}_${{ matrix.os }}
